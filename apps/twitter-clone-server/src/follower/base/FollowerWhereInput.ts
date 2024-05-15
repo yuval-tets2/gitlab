@@ -11,15 +11,26 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { FollowerWhereUniqueInput } from "./FollowerWhereUniqueInput";
-import { ValidateNested, IsOptional } from "class-validator";
-import { Type } from "class-transformer";
-import { FollowerListRelationFilter } from "./FollowerListRelationFilter";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
+import { Type } from "class-transformer";
+import { IsOptional, ValidateNested } from "class-validator";
+import { FollowerWhereUniqueInput } from "./FollowerWhereUniqueInput";
+import { FollowerListRelationFilter } from "./FollowerListRelationFilter";
 import { StringFilter } from "../../util/StringFilter";
 
 @InputType()
 class FollowerWhereInput {
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  comment?: StringNullableFilter;
+
   @ApiProperty({
     required: false,
     type: () => FollowerWhereUniqueInput,

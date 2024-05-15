@@ -1,4 +1,5 @@
 export type Follower = {
+  comment: string | null;
   createdAt: Date;
   follower?: Follower | null;
   followers?: Array<Follower>;

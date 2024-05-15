@@ -3,9 +3,9 @@ import {
   List,
   Datagrid,
   ListProps,
+  TextField,
   DateField,
   ReferenceField,
-  TextField,
 } from "react-admin";
 import Pagination from "../Components/Pagination";
 import { FOLLOWER_TITLE_FIELD } from "./FollowerTitle";
@@ -20,6 +20,7 @@ export const FollowerList = (props: ListProps): React.ReactElement => {
       pagination={<Pagination />}
     >
       <Datagrid rowClick="show">
+        <TextField label="comment" source="comment" />
         <DateField source="createdAt" label="Created At" />
         <ReferenceField
           label="follower"

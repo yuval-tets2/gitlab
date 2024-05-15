@@ -40,6 +40,7 @@ model Like {
 }
 
 model Follower {
+  comment    String?
   createdAt  DateTime   @default(now())
   follower   Follower?  @relation(name: "FollowerOnFollowers", fields: [followerId], references: [id])
   followerId String?

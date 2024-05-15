@@ -4,11 +4,11 @@ import {
   Edit,
   SimpleForm,
   EditProps,
+  TextInput,
   ReferenceInput,
   SelectInput,
   ReferenceArrayInput,
   SelectArrayInput,
-  TextInput,
 } from "react-admin";
 
 import { FollowerTitle } from "./FollowerTitle";
@@ -17,6 +17,7 @@ export const FollowerEdit = (props: EditProps): React.ReactElement => {
   return (
     <Edit {...props}>
       <SimpleForm>
+        <TextInput label="comment" source="comment" />
         <ReferenceInput
           source="follower.id"
           reference="Follower"

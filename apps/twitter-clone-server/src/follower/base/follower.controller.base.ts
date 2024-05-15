@@ -41,6 +41,7 @@ export class FollowerControllerBase {
           : undefined,
       },
       select: {
+        comment: true,
         createdAt: true,
 
         follower: {
@@ -64,6 +65,7 @@ export class FollowerControllerBase {
     return this.service.followers({
       ...args,
       select: {
+        comment: true,
         createdAt: true,
 
         follower: {
@@ -88,6 +90,7 @@ export class FollowerControllerBase {
     const result = await this.service.follower({
       where: params,
       select: {
+        comment: true,
         createdAt: true,
 
         follower: {
@@ -129,6 +132,7 @@ export class FollowerControllerBase {
             : undefined,
         },
         select: {
+          comment: true,
           createdAt: true,
 
           follower: {
@@ -162,6 +166,7 @@ export class FollowerControllerBase {
       return await this.service.deleteFollower({
         where: params,
         select: {
+          comment: true,
           createdAt: true,
 
           follower: {
@@ -195,6 +200,7 @@ export class FollowerControllerBase {
     const results = await this.service.findFollowers(params.id, {
       ...query,
       select: {
+        comment: true,
         createdAt: true,
 
         follower: {

@@ -4,9 +4,9 @@ import {
   Show,
   SimpleShowLayout,
   ShowProps,
+  TextField,
   DateField,
   ReferenceField,
-  TextField,
   ReferenceManyField,
   Datagrid,
 } from "react-admin";
@@ -17,6 +17,7 @@ export const FollowerShow = (props: ShowProps): React.ReactElement => {
   return (
     <Show {...props}>
       <SimpleShowLayout>
+        <TextField label="comment" source="comment" />
         <DateField source="createdAt" label="Created At" />
         <ReferenceField
           label="follower"
@@ -34,6 +35,7 @@ export const FollowerShow = (props: ShowProps): React.ReactElement => {
           label="Followers"
         >
           <Datagrid rowClick="show">
+            <TextField label="comment" source="comment" />
             <DateField source="createdAt" label="Created At" />
             <ReferenceField
               label="follower"
